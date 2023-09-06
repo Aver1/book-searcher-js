@@ -1,0 +1,8 @@
+@import url(../src/vendor/normalize.css);
+
+.page {
+
+}
+
+@import url(./components/BookCard/BookCard.css);
+@import url(./components/BookList/BookList.css);

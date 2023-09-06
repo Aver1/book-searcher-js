@@ -1,0 +1,14 @@
+export const BookCard = (props) => {
+  const srcImg = props.book.volumeInfo.imageLinks.smallThumbnail;
+  const category = props.book.volumeInfo.categories || '';
+  const title = props.book.volumeInfo.title;
+  const author = props.book.volumeInfo.authors;
+  return (
+    <div className="bookCard">
+      <img src={srcImg} alt="Карточка" className="bookCard__image"/>
+      <p className="bookCard__category">{category || '123'}</p>
+      <h3 className="bookCard__title">{title}</h3>
+      <p className="bookCard__authors">{author || "No Data"}</p>
+    </div>
+  );
+}
