@@ -1,5 +1,7 @@
+import zaglushka from "../../images/bookImgZ.jpg"
+
 export const BookCard = (props) => {
-  const srcImg = props.book.volumeInfo.imageLinks.smallThumbnail;
+  const srcImg = props.book.volumeInfo.hasOwnProperty('imageLinks') ? props.book.volumeInfo.imageLinks.smallThumbnail : zaglushka;
   const category = props.book.volumeInfo.categories || '';
   const title = props.book.volumeInfo.title;
   const author = props.book.volumeInfo.authors;

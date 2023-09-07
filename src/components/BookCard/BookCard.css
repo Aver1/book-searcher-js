@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: inherit;
   gap: 10px;
   width: 240px;
   background-color: bisque;
@@ -12,8 +13,9 @@
 .bookCard__image {
   align-self: center;
   max-width: 128px;
+  max-height: 180px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   margin: 20px 0 0;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

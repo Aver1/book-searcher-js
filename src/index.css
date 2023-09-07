@@ -1,8 +1,15 @@
 @import url(../src/vendor/normalize.css);
 
 .page {
-
+  display: flex;
+  flex-direction: column;
+  max-width: 1920px;
+  width: 100%;
+  border: 1px solid green;
+  align-items: center;
+  background-color: blueviolet
 }
 
 @import url(./components/BookCard/BookCard.css);
 @import url(./components/BookList/BookList.css);
+@import url(./components/Search/Search.css);

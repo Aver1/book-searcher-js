@@ -1,0 +1,9 @@
+.BookList {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid red;
+  gap: 15px;
+}
