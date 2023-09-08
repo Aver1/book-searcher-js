@@ -1,9 +1,15 @@
 import { DropDownMenu } from "../DropDownMenu/DropDownMenu";
+import React from "react";
+import { useSearchParams } from "react-router-dom";
 
 const SORT_BY = ['Newest', 'Relevance'];
 const SORT_CATEGORIES = ['all', 'art', 'biography', 'computers', 'history', 'medical', 'poetry'];
 
 export const Search = (props) => {
+
+  // React.useEffect(() => {
+  //   props.setQuery(serchParam.get('q'))
+  // }, []);
 
   function handleBookChange (e) {
     props.setQuery(e.target.value)
@@ -11,7 +17,6 @@ export const Search = (props) => {
 
   function handleSubmit (e) {
     e.preventDefault();
-
     props.onSubmit();
   }
 
@@ -21,8 +26,12 @@ export const Search = (props) => {
         <div className="search-container">
           <input type="text" placeholder="Что ищем?" value={props.query} onChange={handleBookChange}/>
           <input type="submit" />
-          <DropDownMenu list={SORT_CATEGORIES} type={'subject'}/>
-          <DropDownMenu list={SORT_BY} type={'orderBy'}/>
+          <DropDownMenu list={SORT_CATEGORIES} type={'subject'} 
+          handleClick={props.setSubjectValue}
+          />
+          <DropDownMenu list={SORT_BY} type={'orderBy'}
+          handleClick={props.setOrderByValue}
+          />
         </div>
       </form>
     </section>

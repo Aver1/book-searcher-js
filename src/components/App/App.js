@@ -9,6 +9,8 @@ function App() {
 
   const [list, setList] = React.useState([]);
   const [query, setQuery] = React.useState('');
+  const [subjectValue, setSubjectValue] = React.useState('');
+  const [orderByValue, setOrderByValue] = React.useState('');
 
   const [searchParams, setSearchParams] = useSearchParams();
   // console.log(query);
@@ -16,24 +18,33 @@ function App() {
   const searchQuery = searchParams.get('q') || '';
   console.log(searchQuery);
 
+  const str = `q=книга${query}+subject:`+subjectValue+`&orderBy=${orderByValue}`;
+
   React.useEffect(() => {
     requestData();
     console.log(list);
-  }, [searchQuery]);
+  }, []);
 
   const requestData = async () => {
-    const res = await getBooks(searchQuery);
+    const res = await getBooks(str);
     setList(res.items, ...list);
   }
 
   function handleSubmit() {
-    setSearchParams({q: query});
+    debugger;
+    // setSearchParams({q: str, orderBy: orderByValue});
     // getBooks(searchQuery);
   }
 
   return (
     <>
-      <Search onSubmit={handleSubmit} setQuery={setQuery} query={query}/>
+      <Search onSubmit={handleSubmit} 
+      setQuery={setQuery} 
+      query={query} 
+      subjectValue={subjectValue} 
+      setSubjectValue={setSubjectValue}
+      orderByValue={orderByValue}
+      setOrderByValue={setOrderByValue}/>
       <BookList list={list}/>
     </>
   );
