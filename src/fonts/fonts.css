@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Gotham Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./gothampro_bold.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'Gotham Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./gothampro_medium.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'Gotham Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./gothampro_light.woff") format("woff")
+}
+
+@font-face {
+  font-family: 'Stolzl';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./stolzl_regular.woff") format("woff")
+}

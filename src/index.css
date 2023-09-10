@@ -1,7 +1,9 @@
 @import url(../src/vendor/normalize.css);
+@import url(./fonts/fonts.css);
 
 .page {
   display: flex;
+  font-family: 'Gotham Pro', sans-serif;
   flex-direction: column;
   max-width: 1920px;
   width: 100%;

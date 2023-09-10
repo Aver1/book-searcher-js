@@ -2,8 +2,8 @@ import { DropDownMenu } from "../DropDownMenu/DropDownMenu";
 import React from "react";
 import { useSearchParams } from "react-router-dom";
 
-const SORT_BY = ['Newest', 'Relevance'];
-const SORT_CATEGORIES = ['all', 'art', 'biography', 'computers', 'history', 'medical', 'poetry'];
+const SORT_BY = ['Relevance', 'Newest'];
+const SORT_CATEGORIES = ['all', 'Art', 'Biography', 'Computers', 'History', 'Medical', 'Poetry'];
 
 export const Search = (props) => {
 
