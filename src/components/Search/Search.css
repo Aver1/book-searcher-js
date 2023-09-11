@@ -5,5 +5,133 @@
   max-width: 1920px;
   width: 100%;
   height: 228px;
-  background-color: aquamarine;
+  background-image: url(../../images/Books-seacrh.jpg);
+  background-size: contain;
+  background-position: center;
+  background-color: #404040;
+}
+
+.search__header {
+  color: #F2F2F2;
+  margin: 0 0 15px 0;
+  border-bottom: 2px solid #F2F2F2;
+}
+
+.search__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.search__input__container {
+  margin-bottom: 10px;
+}
+
+.search__dropbox-container {
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* поиск */
+.search__input {
+  color: #fff;
+  font-size: 0.9rem;
+  background-color: rgba(140, 140, 140, 0.55);
+  width: 280px;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search__input::placeholder {
+  color: #F2F2F2;
+}
+
+.search__input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.search__input:focus {
+  outline: none;
+}
+
+.search__input:focus + .search__input-border {
+  width: 100%;
+}
+
+.search__input__container {
+  position: relative;
+  --width-of-input: 300px;
+}
+
+.input-alt {
+  font-size: 1.2rem;
+  padding-inline: 1em;
+  padding-block: 0.8em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search__input-border-alt {
+  height: 3px;
+  background: linear-gradient(90deg, #FF6464 0%, #FFBF59 50%, #47C9FF 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1.00);
+}
+
+.search__input-alt:focus + .search__input-border-alt {
+  width: 100%;
+}
+
+.search__submit-btn {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #e1e1e1;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.search__submit-btn:focus,
+.search__submit-btn:hover {
+  color: #fff;
+}
+
+.search__submit-btn:focus:after,
+.search__submit-btn:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.search__submit-btn:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }

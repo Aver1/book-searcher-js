@@ -22,10 +22,14 @@ export const Search = (props) => {
 
   return(
     <section className="search">
-      <form onSubmit={handleSubmit}>
-        <div className="search-container">
-          <input type="text" placeholder="Что ищем?" value={props.query} onChange={handleBookChange}/>
-          <input type="submit" />
+      <form className="search__container" onSubmit={handleSubmit}>
+        <h1 className="search__header">BOOK SEARCHER</h1>
+        <div className="search__input__container">
+          <input className="search__input search__input-alt" placeholder="Что ищем?" required="true" type="text" value={props.query} onChange={handleBookChange}/>
+          <span className="search__input-border search__input-border-alt"></span>
+        </div>
+        {/* <input type="text" placeholder="Что ищем?" value={props.query} onChange={handleBookChange}/> */}
+        <div className="search__dropbox-container">
           <DropDownMenu list={SORT_CATEGORIES} type={'subject'} 
           handleClick={props.setSubjectValue}
           />
@@ -33,6 +37,7 @@ export const Search = (props) => {
           handleClick={props.setOrderByValue}
           />
         </div>
+        <button className="search__submit-btn" type="submit">искать 🔍︎</button>
       </form>
     </section>
   );

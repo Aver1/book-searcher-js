@@ -26,11 +26,11 @@ export const BookList = (props) => {
         {props.list.map((book) => (<BookCard book={book} key={book.id}/>))}
       </div>
       <div className={`BookList__error ${!props.list.length ? 'BookList__error_visible' : ''}`}>Ничего не найденно. Попробуйте использовать другое ключевое слово</div>
-      {/* <button type="button" className="BookList__more-btn" onClick={props.handleMoreStep}>Загрузить еще</button> */}
-      <button data-text="Awesome" className="BookList__more-btn" onClick={props.handleMoreStep}>
+      <button type="button" className="BookList__more-btn" onClick={props.handleMoreStep}>Загрузить еще</button>
+      {/* <button data-text="Awesome" className="BookList__more-btn" onClick={props.handleMoreStep}>
         <span className="BookList__more-btn-actual-text">&nbsp;More&nbsp;</span>
         <span className="BookList__more-btn-hover-text" aria-hidden="true">&nbsp;More&nbsp;</span>
-      </button>
+      </button> */}
     </section>
   );
 }

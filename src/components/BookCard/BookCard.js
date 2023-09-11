@@ -7,11 +7,19 @@ export const BookCard = (props) => {
   const title = props.book.volumeInfo.title;
   const author = props.book.volumeInfo.authors;
   return (
-    <div className="bookCard">
+    // <div className="bookCard">
+    //   <img src={srcImg} alt="Карточка" className="bookCard__image"/>
+    //   <p className="bookCard__category">{category || 'No Data'}</p>
+    //   <h3 className="bookCard__title">{title}</h3>
+    //   <p className="bookCard__authors">{author || "No Data"}</p>
+    // </div>
+    <div class="bookCard">
       <img src={srcImg} alt="Карточка" className="bookCard__image"/>
-      <p className="bookCard__category">{category || 'No Data'}</p>
-      <h3 className="bookCard__title">{title}</h3>
-      <p className="bookCard__authors">{author || "No Data"}</p>
+      <div className="bookCard__container">
+        <p className="bookCard__category">{category || 'No Data'}</p>
+        <h3 className="bookCard__title" title={title}>{title}</h3>
+        <p className="bookCard__authors">{author || "No Data"}</p>
+      </div>
     </div>
   );
 }

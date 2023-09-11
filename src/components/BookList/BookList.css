@@ -4,14 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid red;
   gap: 15px;
 }
 
 .BookList__container {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: space-around;
   gap: 15px;
 }
 
@@ -35,40 +34,42 @@
 
 /* button styling */
 .BookList__more-btn {
-  margin: 0;
-  height: auto;
-  background: transparent;
-  padding: 0;
-  border: none;
+  margin-top: 35px;
+  font-size: 18px;
+  color: #181818;
+  font-family: inherit;
+  font-weight: 800;
   cursor: pointer;
-  --border-right: 6px;
-  --text-stroke-color: rgba(255,255,255,0.6);
-  --animation-color: #37FF8B;
-  --fs-size: 2em;
-  letter-spacing: 3px;
-  text-decoration: none;
-  font-size: var(--fs-size);
-  font-family: "Arial";
   position: relative;
+  border: none;
+  background: none;
   text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
 }
-/* this is the text, when you hover on button */
-.BookList__more-btn-hover-text {
-  position: absolute;
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 0%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color);
+
+.BookList__more-btn:focus,
+.BookList__more-btn:hover {
+  color: #000;
 }
-/* hover */
-.BookList__more-btn:hover .BookList__more-btn-hover-text {
+
+.BookList__more-btn:focus:after,
+.BookList__more-btn:hover:after {
   width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color))
+  left: 0%;
+}
+
+.BookList__more-btn:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }

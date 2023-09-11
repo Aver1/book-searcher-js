@@ -20,9 +20,9 @@ export const DropDownMenu = ({ list, handleClick }) => {
 
   return (
     <div className="dropDownMenu">
-      <button onClick={handleOpen} type='button'>{value}</button>
+      <button className="dropDownMenu__open-btn" onClick={handleOpen} type='button'>{value}</button>
       {open ? (
-        <ul className="dropDownMenumenu">
+        <ul className="dropDownMenu__menu">
           {list.map((content) => (
             <li key={content}>
               <input name={content} type='button' onClick={() => handleButtonClick(content)} value={content} />
